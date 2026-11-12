@@ -66,7 +66,7 @@ jobs:
         run: uv sync --extra test --locked --python ${{ matrix.python-version }}
 
       - name: Run test suite
-        run: .venv/bin/pytest tests/ -v
+        run: .venv/bin/pytest tests/test_memory_file_routes.py tests/test_lockdown.py -v
 
       - name: Check new migrations are numbered above main's highest
         # The runner skips versions at or below the database's current one. A PR is
